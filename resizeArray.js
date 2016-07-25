@@ -7,6 +7,7 @@ var pushElement = function(list, size, element){
 }
 
 r.resizeArray = function(list, size, element){
+	if(!Array.isArray(list)) return;
 	if((list.length < size) && element)
 		list = pushElement(list, size, element)
 	else if(size)

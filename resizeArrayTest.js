@@ -83,3 +83,15 @@ test.resizeArray_adds_elements_of_copies_of_given_object_to_existing_array_and_m
 	assert.notEqual(a[0].child,c);//child is also not same object	
 };
 
+test.resizeArray_does_nothing_when_array_is_not_supplied = function(){
+	var a = {'0':25,'1':26};
+	r.resizeArray(a,3);
+	assert.deepEqual(Object.keys(a),[0,1]);
+	assert.equal(a[0],25);
+	assert.equal(a[1],26);
+
+	r.resizeArray(a,1);
+	assert.deepEqual(Object.keys(a),[0,1]);
+	assert.equal(a[0],25);
+	assert.equal(a[1],26);
+};
