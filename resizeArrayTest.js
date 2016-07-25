@@ -60,3 +60,15 @@ test.resizeArray_adds_elements_of_given_object_to_existing_array = function(){
 	assert.deepEqual(a.length,1);
 	assert.deepEqual(a[0],{a:1});	
 };
+
+test.resizeArray_adds_elements_of_copies_of_given_object_to_existing_array = function(){
+	var o = {a:1};
+	var a = [];
+	r.resizeArray(a,2,o);
+	assert.deepEqual(a.length,2);
+	assert.deepEqual(a[0],o);//values are same
+	assert.deepEqual(a[1],o);
+	assert.notEqual(a[0],o);//not same object
+	assert.notEqual(a[1],o);
+};
+
