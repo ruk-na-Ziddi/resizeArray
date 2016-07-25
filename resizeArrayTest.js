@@ -22,3 +22,12 @@ test.resizeArray_does_nothing_when_new_size_is_not_given = function(){
 	assert.equal(a[0],1);
 	assert.equal(a[1],2);
 };
+
+test.resizeArray_adds_elements_to_existing_array = function(){
+	var a = [1,2];
+	r.resizeArray(a,3);	
+	assert.equal(a.length,3)
+	assert.equal(a[0],1);
+	assert.equal(a[1],2);
+	assert.equal(a[2],undefined);
+};
