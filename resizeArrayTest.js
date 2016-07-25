@@ -72,3 +72,14 @@ test.resizeArray_adds_elements_of_copies_of_given_object_to_existing_array = fun
 	assert.notEqual(a[1],o);
 };
 
+test.resizeArray_adds_elements_of_copies_of_given_object_to_existing_array_and_makes_copy_of_references_too = function(){
+	var c = {a:1};
+	var parent = {cycle:1,child:c};
+	var a = [];
+	r.resizeArray(a,1,parent);
+	assert.equal(a.length,1);
+	assert.deepEqual(a[0],parent);//values are same	
+	assert.notEqual(a[0],parent);//not same object
+	assert.notEqual(a[0].child,c);//child is also not same object	
+};
+
