@@ -46,3 +46,10 @@ test.resizeArray_adds_elements_of_given_value_to_existing_array = function(){
 	assert.equal(a[0],25);
 	assert.equal(a[1],25);
 };
+
+test.resizeArray_does_not_change_elements_of_existing_array = function(){
+	var a = [42,42];
+	r.resizeArray(a,1,25);
+	assert.deepEqual(a.length,1);
+	assert.equal(a[0],42);	
+};
