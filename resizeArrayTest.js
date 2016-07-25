@@ -31,3 +31,10 @@ test.resizeArray_adds_elements_to_existing_array = function(){
 	assert.equal(a[1],2);
 	assert.equal(a[2],undefined);
 };
+
+test.resizeArray_removes_elements_from_existing_array = function(){
+	var a = [1,2];
+	r.resizeArray(a,1);	
+	assert.equal(a.length,1)
+	assert.equal(a[0],1);	
+};
