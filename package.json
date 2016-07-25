@@ -1,0 +1,11 @@
+{
+  "name": "resizearray",
+  "version": "1.0.0",
+  "description": "",
+  "main": "resizeArray.js",
+  "scripts": {
+    "test": "node runTest.js resizeArrayTest.js"
+  },
+  "author": "ankurks@thoughtworks.com",
+  "license": "ISC"
+}
