@@ -38,3 +38,11 @@ test.resizeArray_removes_elements_from_existing_array = function(){
 	assert.equal(a.length,1)
 	assert.equal(a[0],1);	
 };
+
+test.resizeArray_adds_elements_of_given_value_to_existing_array = function(){
+	var a = [];
+	r.resizeArray(a,2,25);
+	assert.deepEqual(a.length,2);
+	assert.equal(a[0],25);
+	assert.equal(a[1],25);
+};
