@@ -14,3 +14,11 @@ test.resizeArray_adds_elements_of_copies_of_given_object_to_existing_array_and_m
 	assert.notEqual(a[0].child,c);//child is also not same object
 	assert.notEqual(a[0].d.c,c);
 };
+
+test.resizeArray_does_nothing_when_new_size_is_not_given = function(){
+	var a = [1,2];
+	r.resizeArray(a);
+	assert.equal(a.length,2);
+	assert.equal(a[0],1);
+	assert.equal(a[1],2);
+};
